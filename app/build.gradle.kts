@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    // KMP Networking Library
     implementation(files("libs/shared-release.aar"))
 
     implementation(libs.androidx.core.ktx)
