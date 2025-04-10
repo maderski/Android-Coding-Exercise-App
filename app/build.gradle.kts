@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(files("libs/shared-release.aar"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
