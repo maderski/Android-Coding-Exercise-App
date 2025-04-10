@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maderskitech.kmpcodingexercisenetwork.domain.model.Item
 import com.maderskitech.kmpcodingexercisenetwork.domain.usecase.SortedItemsUseCase
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewModel() {
@@ -17,7 +16,7 @@ class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewMo
 
     var items by mutableStateOf<List<Item>>(emptyList())
         private set
-    
+
     fun fetchItems() {
         isLoading = true
         viewModelScope.launch {
