@@ -88,7 +88,7 @@ private fun GroupedLazyColumn(
     ) {
         itemGroups.forEach { itemGroup ->
             stickyHeader {
-                GroupHeader(itemGroup.listId)
+                GroupHeader("List ID: ${itemGroup.listId}")
             }
             items(
                 items = itemGroup.items,
@@ -132,8 +132,8 @@ fun PreviewDisplayItemsScreen() {
     DisplayItemsScreen(
         false,
         listOf(
-            ItemGroup("1", listOf(Item(100, 1, "Item 100"), Item(101, 1, "Item 101"), Item(102, 1, "Item 202"))),
-            ItemGroup("2", listOf(Item(200, 2, "Item 200"), Item(201, 2, "Item 201"), Item(202, 2, "Item 202")))
+            ItemGroup(1, listOf(Item(100, 1, "Item 100"), Item(101, 1, "Item 101"), Item(102, 1, "Item 202"))),
+            ItemGroup(2, listOf(Item(200, 2, "Item 200"), Item(201, 2, "Item 201"), Item(202, 2, "Item 202")))
         ),
         PaddingValues(8.dp)
     )

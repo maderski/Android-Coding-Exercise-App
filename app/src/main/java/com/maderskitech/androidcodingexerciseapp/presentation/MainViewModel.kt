@@ -25,7 +25,7 @@ class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewMo
                 result
                     .onSuccess { listIdToItemsMap ->
                         itemGroups = listIdToItemsMap.map { entry ->
-                            ItemGroup(entry.key.toString(), entry.value)
+                            ItemGroup(entry.key, entry.value)
                         }
                         isLoading = false
                     }
