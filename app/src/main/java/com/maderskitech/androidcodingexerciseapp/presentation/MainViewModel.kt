@@ -20,7 +20,6 @@ class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewMo
     fun fetchItems() {
         isLoading = true
         viewModelScope.launch {
-            isLoading = true
             sortedItemsUseCase.getSortedItemsFlow().collect { result ->
                 result
                     .onSuccess { listIdToItemsMap ->
