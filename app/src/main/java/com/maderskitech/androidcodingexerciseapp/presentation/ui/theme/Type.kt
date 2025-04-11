@@ -1,4 +1,4 @@
-package com.maderskitech.androidcodingexerciseapp.ui.theme
+package com.maderskitech.androidcodingexerciseapp.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

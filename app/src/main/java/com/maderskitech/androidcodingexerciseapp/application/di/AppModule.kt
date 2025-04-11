@@ -1,6 +1,6 @@
 package com.maderskitech.androidcodingexerciseapp.application.di
 
-import com.maderskitech.androidcodingexerciseapp.MainViewModel
+import com.maderskitech.androidcodingexerciseapp.presentation.MainViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 
