@@ -71,7 +71,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 private fun UpdateStatusBarForTheme(activity: Activity, isDarkTheme: Boolean) {
     val view = LocalView.current
-    val window = (view.context as Activity).window
+    val window = activity.window
     val lifecycleOwner = LocalLifecycleOwner.current
     val useLightIcons = !isDarkTheme
 
