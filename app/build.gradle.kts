@@ -56,6 +56,7 @@ dependencies {
     // Koin
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
+    implementation(libs.koin.compose.viewmodel)
 
     // KTOR Engine for Android
     implementation(libs.ktor.client.okhttp)
