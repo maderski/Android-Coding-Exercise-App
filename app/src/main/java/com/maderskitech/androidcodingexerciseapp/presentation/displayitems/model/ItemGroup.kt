@@ -1,4 +1,4 @@
-package com.maderskitech.androidcodingexerciseapp.presentation.model
+package com.maderskitech.androidcodingexerciseapp.presentation.displayitems.model
 
 import com.maderskitech.kmpcodingexercisenetwork.domain.model.Item
 
