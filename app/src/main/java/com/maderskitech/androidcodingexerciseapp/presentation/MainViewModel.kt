@@ -7,10 +7,10 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.maderskitech.androidcodingexerciseapp.presentation.model.ItemGroup
-import com.maderskitech.kmpcodingexercisenetwork.domain.usecase.SortedItemsUseCase
+import com.maderskitech.kmpcodingexercisenetwork.domain.respository.ItemRepository
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewModel() {
+class MainViewModel(private val itemsRepository: ItemRepository) : ViewModel() {
     var isLoading by mutableStateOf(false)
         private set
 
@@ -20,18 +20,20 @@ class MainViewModel(private val sortedItemsUseCase: SortedItemsUseCase) : ViewMo
     fun fetchItems() {
         isLoading = true
         viewModelScope.launch {
-            sortedItemsUseCase.getSortedItemsFlow().collect { result ->
-                result
-                    .onSuccess { listIdToItemsMap ->
-                        itemGroups = listIdToItemsMap.map { entry ->
-                            ItemGroup(entry.key, entry.value)
-                        }
-                        isLoading = false
+            itemsRepository.getAllItems()
+                .onSuccess { listIdToItemsMap ->
+                    itemGroups = listIdToItemsMap.map { entry ->
+                        ItemGroup(entry.key, entry.value)
                     }
-                    .onFailure { throwable ->
-                        Log.e(TAG, "Error Occurred getting sorted items.\nMessage: ${throwable.message}")
-                    }
-            }
+                    isLoading = false
+                }
+                .onFailure { throwable ->
+                    Log.e(
+                        TAG,
+                        "Error Occurred getting sorted items.\nMessage: ${throwable.message}"
+                    )
+
+                }
         }
     }
 
