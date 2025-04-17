@@ -1,4 +1,4 @@
-package com.maderskitech.androidcodingexerciseapp.presentation.displayitems.composables
+package com.maderskitech.androidcodingexerciseapp.presentation.displayitems.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
